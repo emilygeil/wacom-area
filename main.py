@@ -59,6 +59,8 @@ def device_has_area(device):
 
 def find_first_tablet():
     devices = get_devices()
+    if devices is None:
+        return None
     for device in devices:
         if devices[device]["type"] == "STYLUS":
             if device_has_area(device):
